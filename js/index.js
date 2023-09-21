@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       id: Date.now(),
       title,
       author,
-      year,
+      year: +year,
       isComplete,
     };
     books.push(book);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const booksToRender = bookList || books;
 
-    booksToRender.forEach((buku, index) => {
+    booksToRender.forEach((book, index) => {
       const bookCard = document.createElement("div");
       bookCard.classList.add("book-card");
 
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       bookCard.appendChild(bookHeader);
       bookCard.appendChild(bookAction);
 
-      if (buku.isComplete) {
+      if (book.isComplete) {
         completedContainer.appendChild(bookCard);
       } else {
         notCompleteContainer.appendChild(bookCard);
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       document.getElementById("title").value = "";
       document.getElementById("author").value = "";
-      document.getElementById("year").value = "";
+      document.getElementById("year").value = 0;
       document.getElementById("isComplete").checked = false;
     } else {
       alert("Harap isi semua field!");
@@ -156,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const keyword = searchInput.value.toLowerCase();
 
     const filteredBooks = books.filter(
-      (buku) =>
-        buku.title.toLowerCase().includes(keyword) ||
-        buku.author.toLowerCase().includes(keyword)
+      (book) =>
+        book.title.toLowerCase().includes(keyword) ||
+        book.author.toLowerCase().includes(keyword)
     );
 
     renderBook(filteredBooks);
