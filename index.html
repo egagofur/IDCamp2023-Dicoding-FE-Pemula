@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style//style.css" />
+    <!-- font from google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bookshelf Apps | Ega Gofur</title>
+  </head>
+  <body class="container">
+    <section class="main-container">
+      <header class="header-container">
+        <h1>Booshelf 📖</h1>
+        <div class="search-container">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="search-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+          <input
+            id="searchInput"
+            autofocus
+            type="text"
+            placeholder="Cari buku"
+          />
+        </div>
+      </header>
+      <main class="book-container">
+        <div class="not-complate">
+          <h2>Belum selesai dibaca</h2>
+          <div id="notComplateContainer" class="card-container"></div>
+        </div>
+        <div class="complated">
+          <h2>Selesai dibaca</h2>
+          <div id="complatedContainer" class="card-container"></div>
+        </div>
+      </main>
+      <footer>
+        <button id="addBookBtn">Tambah buku</button>
+      </footer>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h2>Tambah Buku</h2>
+          <form class="form-container">
+            <label for="judul">Judul Buku:</label>
+            <input type="text" id="title" name="title" />
+            <label for="penulis">Penulis:</label>
+            <input type="text" id="author" name="author" />
+            <label for="penulis">Tahun:</label>
+            <input type="number" id="year" name="year" />
+            <div class="form-done">
+              <label for="isComplete">Complete:</label>
+              <input type="checkbox" name="isComplete" id="isComplete" />
+            </div>
+            <button id="saveBookBtn">Simpan</button>
+            <button id="closeModalBtn">x</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="modalConfirm" class="modal-confirm">
+        <div class="modal-content">
+          <h2>Konfirmasi Penghapusan</h2>
+          <p>
+            Apakah Anda yakin ingin menghapus buku "<span
+              id="bookNameToDelete"
+            ></span
+            >"?
+          </p>
+          <div class="action-modal">
+            <button id="confirmDeleteBtn" class="delete-button">Ya</button>
+            <button id="cancelDeleteBtn" class="cancel-delete-button">
+              Tidak
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

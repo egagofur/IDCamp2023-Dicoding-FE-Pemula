@@ -1,0 +1,378 @@
+:root {
+  --primary: #545eb2;
+  --secondary: #f6f6f6;
+  --tertiary: #f1613d;
+  --dark: #2f2f2f;
+}
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.main-container {
+  background-image: linear-gradient(to right, var(--primary), #9ea7e7);
+  min-height: 100vh;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.header-container :where(h1) {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid #eaeaea;
+  border-radius: 0.8rem;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  background-color: var(--secondary);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  color: var(--dark);
+  width: 24px;
+  margin-left: 1rem;
+  height: 24px;
+}
+
+.search-container input {
+  font-size: 2rem;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.header-container input {
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  width: 100%;
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.header-container input::placeholder {
+  font-style: italic;
+}
+
+.header-container input:focus {
+  outline: none;
+}
+
+.book-container {
+  background-color: var(--secondary);
+  min-height: calc(100vh - 12.5rem);
+  border-top-left-radius: 4rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.not-complate {
+  margin-top: 1rem;
+  flex-shrink: 1;
+}
+
+.not-complate h2 {
+  text-align: end;
+}
+
+.card-container {
+  margin-top: 0.5rem;
+  max-height: 15rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.complated {
+  flex-shrink: 1;
+}
+
+.complated h2 {
+  text-align: end;
+}
+
+.book-container :where(h2) {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.book-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+  color: var(--dark);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.book-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.book-action {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.book-action input {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #eaeaea;
+  background-color: var(--secondary);
+  color: var(--dark);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.book-action button {
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  text-align: center;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 3rem);
+  margin: 0 auto;
+}
+
+footer button {
+  position: absolute;
+  bottom: 1rem;
+  min-width: 100%;
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  border: none;
+  border-radius: 0.8rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+footer button:hover {
+  background-color: var(--tertiary);
+  opacity: 0.8;
+  color: var(--secondary);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  min-width: 25rem;
+}
+
+.main-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-container label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.form-container input {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eaeaea;
+  width: 100%;
+  background-color: #fafafa;
+  color: var(--dark);
+}
+
+.form-container input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #eaeaea;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.form-done {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-container input:focus {
+  outline: none;
+}
+
+.form-container button {
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  text-align: center;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.form-container #closeModalBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  color: var(--dark);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: var(--tertiary);
+  opacity: 0.8;
+  color: var(--secondary);
+}
+
+.modal-confirm {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: var(--secondary);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  text-align: center;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.modal-confirm h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.modal-confirm p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
+
+.cancel-delete-button {
+  background-color: #fafafa;
+  color: var(--dark);
+  text-align: center;
+  font-size: 1.2rem;
+  outline: none;
+  border: 1px solid #eaeaea;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.action-modal {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
