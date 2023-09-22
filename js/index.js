@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       id: Date.now(),
       title,
       author,
-      year: +year,
+      year: +year, // convert from string to number
       isComplete,
     };
     books.push(book);
@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const bookTitle = document.createElement("div");
       bookTitle.classList.add("book-title");
-      bookTitle.innerHTML = `<h3>${buku.title}</h3><p>(${buku.year})</p>`;
+      bookTitle.innerHTML = `<h3>${book.title}</h3><p>(${book.year})</p>`;
 
       const bookAuthor = document.createElement("p");
-      bookAuthor.textContent = buku.author;
+      bookAuthor.textContent = book.author;
 
       const bookAction = document.createElement("div");
       bookAction.classList.add("book-action");
@@ -93,14 +93,14 @@ document.addEventListener("DOMContentLoaded", function () {
       buttonDelete.classList.add("cancel-delete-button");
       buttonDelete.textContent = "Hapus";
       buttonDelete.addEventListener("click", () => {
-        showModalConfirm(buku.id);
+        showModalConfirm(book.id);
       });
 
       const checkBox = document.createElement("input");
       checkBox.type = "checkbox";
-      checkBox.checked = buku.isComplete;
+      checkBox.checked = book.isComplete;
       checkBox.addEventListener("change", () => {
-        buku.isComplete = checkBox.checked;
+        book.isComplete = checkBox.checked;
         renderBook();
         saveBooksToLocalStorage();
       });
